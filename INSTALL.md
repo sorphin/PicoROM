@@ -82,5 +82,6 @@ By default, Linux requires root privileges (`sudo`) to access USB devices. To us
 ## BOOTSEL mode
 If a PicoROM becomes unresponsive as part of the firmware update process you can force it into it's bootloader (BOOTSEL) mode by bridging the `USB` and `GND` pads on the header near the RP2040 while powering on.
 
-![USB Boot header location](docs/usb_boot.jpg)
+![USB Boot header location Original](docs/usb_boot.jpg)
+![USB Boot header location New](docs/usb_boot_28.jpg)
 
