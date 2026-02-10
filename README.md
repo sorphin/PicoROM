@@ -27,6 +27,9 @@ The abbreviated names POG, P28, and P32 identify which firmware image to use for
 ## Version 2.0
 Version 2.0 introduced a custom USB protocol, replacing the emulated USB serial port used in version 1.x. The 2.0+ firmware is not compatible with the 1.x `picorom` tool, and vice versa.
 
+## Installation
+Read [INSTALL.md](INSTALLATION.md) for detailed installation instructions.
+
 ## Operation
 PicoROM is controlled via USB using the `picorom` command-line tool. The tool can list connected devices, rename them, set parameters, upload ROM data, and update firmware.
 
@@ -122,28 +125,4 @@ Worst-case access time is 70ns, measured from address assertion to data availabi
 
 The delay from output/chip enable assertion to data bus active (Output Enable to Output Delay) is more consistent, with a worst case of 40ns. The inverse delay (enable deasserted to high-impedance) has not been measured but is assumed to be similar.
 
-## Installation
-Download the `picorom` command-line application from the [latest release](https://github.com/wickerwaka/PicoROM/releases/latest). Pre-built binaries are available for Windows (Intel), macOS (ARM and Intel), and Linux (ARMv7 and Intel). 
-Download the appropriate file for your system from the selection below, place the binary in your PATH and rename it to `picorom` (or `picorom.exe` on Windows).
-* Windows: [Intel 64-bit](https://github.com/wickerwaka/PicoROM/releases/latest/download/picorom-x86_64-pc-windows-msvc.exe)
-* MacOS: [ARM 64-bit](https://github.com/wickerwaka/PicoROM/releases/latest/download/picorom-aarch64-apple-darwin), [Intel 64-bit](https://github.com/wickerwaka/PicoROM/releases/latest/download/picorom-x86_64-apple-darwin)
-* Linux: [Intel 64-bit](https://github.com/wickerwaka/PicoROM/releases/latest/download/picorom-x86_64-unknown-linux-musl), [ARM 32-bit](https://github.com/wickerwaka/PicoROM/releases/latest/download/picorom-armv7-unknown-linux-musleabihf)
 
-The `picorom` tool includes embedded firmware for all hardware variants. To update a device running firmware 2.0 or later:
-
-```console
-foo:~ $ picorom firmware cpu_low
-```
-
-This will display available firmware versions and flash the selected one. You can also specify a firmware file directly:
-
-```console
-foo:~ $ picorom firmware cpu_low path/to/firmware.uf2
-```
-
-
-If a PicoROM becomes unresponsive, force it into USB boot mode by bridging the `USB` and `GND` pads on the header near the RP2040 while powering on.
-
-![USB Boot header location](docs/usb_boot.jpg)
-
-After flashing, power-cycle the device and verify with `picorom list` and `picorom get <name> version`.
