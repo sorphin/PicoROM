@@ -28,7 +28,7 @@ The abbreviated names POG, P28, and P32 identify which firmware image to use for
 Version 2.0 introduced a custom USB protocol, replacing the emulated USB serial port used in version 1.x. The 2.0+ firmware is not compatible with the 1.x `picorom` tool, and vice versa.
 
 ## Installation
-Read [INSTALL.md](INSTALLATION.md) for detailed installation instructions.
+Read [INSTALL.md](INSTALL.md) for detailed installation instructions.
 
 ## Operation
 PicoROM is controlled via USB using the `picorom` command-line tool. The tool can list connected devices, rename them, set parameters, upload ROM data, and update firmware.
