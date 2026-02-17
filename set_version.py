@@ -19,10 +19,9 @@ def update_cmake(cmake_path: Path, major: int, minor: int) -> None:
     """Update VERSION in CMakeLists.txt to major.minor."""
     content = cmake_path.read_text()
     new_content = re.sub(
-        r'^set\(VERSION\s+[\d.]+\)',
+        r'set\(VERSION\s+[\d.]+\)',
         f'set(VERSION {major}.{minor})',
-        content,
-        flags=re.MULTILINE
+        content
     )
     if content == new_content:
         print(f"Warning: No VERSION found in {cmake_path}")
