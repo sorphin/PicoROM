@@ -11,7 +11,7 @@ PicoROM is an 8-bit ROM emulator in DIP-32 and DIP-28 form factors. Its primary 
 - USB control with integrated firmware updates
 - Controllable reset pin
 
-Fully assembled versions are available from [Tindie](https://www.tindie.com/products/pbretro/picorom/).
+Fully assembled versions are available from [my store](https://peanutbutterretro.com/products/picorom).
 
 ## Hardware Variants
 There are three hardware versions of PicoROM:
